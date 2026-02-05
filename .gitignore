@@ -4,6 +4,9 @@ node_modules/
 # Compiled output
 dist/
 
+# Data files
+todos.json
+
 # OS files
 .DS_Store
 
