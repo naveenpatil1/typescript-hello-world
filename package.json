@@ -1,0 +1,19 @@
+{
+  "name": "typescript-hello-world",
+  "version": "1.0.0",
+  "description": "A simple Hello World application in TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node index.ts"
+  },
+  "keywords": ["typescript", "hello-world"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.10.6"
+  }
+}
