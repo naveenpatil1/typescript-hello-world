@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+// Use relative URL for API - works in both development and production
+const API_URL = window.location.origin + '/api';
 let todos = [];
 let currentFilter = 'all';
 

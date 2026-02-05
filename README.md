@@ -68,6 +68,17 @@ npm start delete 2
 npm start help
 ```
 
+## 🚀 Deployment
+
+Want to make your app publicly accessible? See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy to Railway (Free & Easy):**
+1. Sign up at [railway.app](https://railway.app)
+2. Deploy from GitHub repo
+3. Get your public URL in 2 minutes!
+
+---
+
 ## 📖 CLI Usage
 
 ### Add a new todo
