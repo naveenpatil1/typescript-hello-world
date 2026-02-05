@@ -87,13 +87,23 @@ class TodoManager {
 }
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 const todoManager = new TodoManager();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Health check endpoint for Railway
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'ok', message: 'Server is running' });
+});
+
+// Root endpoint - serve the app
+app.get('/', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // API Routes
 app.get('/api/todos', (req: Request, res: Response) => {
@@ -166,7 +176,8 @@ app.delete('/api/todos/:id', (req: Request, res: Response) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Todo Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Todo Server running on http://0.0.0.0:${PORT}`);
   console.log(`📋 Open http://localhost:${PORT} in your browser`);
+  console.log(`✅ Health check available at /health`);
 });
